@@ -23,14 +23,7 @@ Java Swing қолданбасы. 6 бөлме (101, 102, 201, 202, 305, 401), ә
 | **Facade** | `facade/SmartRoomFacade`, `VoiceAssistant` | UI тек `welcome()`, `movieMode()`, `setLevel()` сияқты қарапайым әдістерді шақырады |
 | **Singleton** | `singleton/SmartHomeHub` | Бүкіл қонақүйде жалғыз хаб: бөлмелер және ортақ журнал |
 
-## Іске қосу
-```
-javac -d out $(find src -name "*.java")
-java -cp out smarthome.Main          # терезе (GUI)
-java -cp out smarthome.ConsoleDemo   # консольдік демо
-java -cp out smarthome.SelfTest      # автотест
-```
-Дайын `dist/SmartRoom.jar` файлын екі рет басу да жеткілікті (Java 11+ керек).
+
 
 ## Құрылымы
 ```
@@ -41,6 +34,5 @@ src/smarthome/
 ├── model/       Room
 ├── singleton/   SmartHomeHub
 ├── facade/      SmartRoomFacade, VoiceAssistant
-├── ui/          Swing интерфейсі
-├── Main.java, ConsoleDemo.java, SelfTest.java
+
 ```
