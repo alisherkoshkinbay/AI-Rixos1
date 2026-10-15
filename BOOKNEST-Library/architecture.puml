@@ -1,0 +1,77 @@
+@startuml
+skinparam backgroundColor #F7F8FC
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+
+package "UI" #EAF0FF {
+  class Main
+  class LibraryFrame
+  interface LibraryObserver {
+    +onLibraryChanged(message)
+  }
+}
+package "Facade" #F0EAFE {
+  class LibraryFacade {
+    +catalog()
+    +addBook(...)
+    +issueBook(...)
+    +returnBook(...)
+    +fineFor(loan)
+  }
+}
+package "Observer" #E4F7F4 {
+  class LibraryEventPublisher {
+    +subscribe(observer)
+    +publish(message)
+  }
+}
+package "Singleton Repository" #FFF0E5 {
+  class LibraryRepository <<Singleton>> {
+    -INSTANCE
+    +getInstance()
+    +books()
+    +loans()
+    +save()
+  }
+}
+package "Strategy" #E8F7E8 {
+  interface BookSortStrategy {
+    +sort(books)
+    +label()
+  }
+  class ByTitleStrategy
+  class ByAuthorStrategy
+  class ByAvailabilityStrategy
+}
+package "Iterator" #EEF3FC {
+  class BookCatalog <<Iterable>> {
+    +iterator()
+  }
+  class BookCatalogIterator <<Iterator>> {
+    +hasNext()
+    +next()
+  }
+}
+package "Model" #F4F5F8 {
+  class Book
+  class Loan
+}
+
+Main --> LibraryFrame
+LibraryFrame ..|> LibraryObserver
+LibraryFrame --> LibraryFacade
+LibraryFacade --> LibraryRepository
+LibraryFacade --> LibraryEventPublisher
+LibraryEventPublisher --> LibraryObserver : notify
+LibraryFacade --> BookSortStrategy
+ByTitleStrategy ..|> BookSortStrategy
+ByAuthorStrategy ..|> BookSortStrategy
+ByAvailabilityStrategy ..|> BookSortStrategy
+LibraryFacade --> BookCatalog
+BookCatalog --> BookCatalogIterator
+BookCatalogIterator ..> Book
+LibraryRepository o-- Book
+LibraryRepository o-- Loan
+@enduml
