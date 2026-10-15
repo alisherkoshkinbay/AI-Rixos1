@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-15T12:00:00.000Z" agent="QONAQ" version="24.7.17" type="device">
+  <diagram id="qonaq-uml" name="Restaurant Studio UML">
+    <mxGraphModel dx="1700" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="1650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="QONAQ RESTAURANT STUDIO — JAVA 17 / UML CLASS DIAGRAM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;fontFamily=Arial;fontSize=26;fontStyle=1;fontColor=#27213C;" vertex="1" parent="1">
+          <mxGeometry x="170" y="15" width="1250" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="UI" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;RestaurantFrame&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ navigate(page)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ flash(message)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0EAFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1174" y="145" width="188" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Facade" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;RestaurantFacade «Facade»&lt;/b&gt;&lt;br/&gt;&lt;font color=&quot;#7457F6&quot; style=&quot;font-size:10px&quot;&gt;FACADE&lt;/font&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ catalog(): List&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ addToCart(id, qty)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ checkout(...): Order&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance(id)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel(id)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ revenue(): int&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E0FF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="340" width="283" height="188" as="geometry" />
+        </mxCell>
+        <mxCell id="Factory" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;MenuFactory «abstract»&lt;/b&gt;&lt;br/&gt;&lt;font color=&quot;#7457F6&quot; style=&quot;font-size:10px&quot;&gt;FACTORY METHOD&lt;/font&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;# create(...): MenuItem&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ catalog(): List&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="532" y="641" width="247" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Food" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;FoodFactory&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ catalog(): List&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="221" y="388" width="141" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="Drink" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;DrinkFactory&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ catalog(): List&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="395" y="388" width="144" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="Dessert" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;DessertFactory&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ catalog(): List&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="572" y="388" width="166" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="Item" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;MenuItem «record»&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;id, name, category&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;price, icon, artStyle&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="772" y="379" width="206" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Builder" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;OrderBuilder «Builder»&lt;/b&gt;&lt;br/&gt;&lt;font color=&quot;#7457F6&quot; style=&quot;font-size:10px&quot;&gt;BUILDER&lt;/font&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ customer(value)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ phone(value)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ addItem(line)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ discount(value)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ build(): Order&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="838" y="613" width="236" height="169" as="geometry" />
+        </mxCell>
+        <mxCell id="Order" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;Order&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;id, customer, items&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;subtotal, discount, status&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ next()&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel()&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="114" y="895" width="253" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="State" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;OrderState «interface»&lt;/b&gt;&lt;br/&gt;&lt;font color=&quot;#7457F6&quot; style=&quot;font-size:10px&quot;&gt;STATE&lt;/font&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance(order)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel(order)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1159" width="237" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="New" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;NewState&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance()&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel()&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="945" y="914" width="141" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Preparing" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;PreparingState&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance()&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel()&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="401" y="914" width="163" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Ready" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;ReadyState&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance()&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel()&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="598" y="914" width="141" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Final" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;FinalState&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ advance()&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ cancel()&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="772" y="914" width="141" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Events" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;OrderEvents «Subject»&lt;/b&gt;&lt;br/&gt;&lt;font color=&quot;#7457F6&quot; style=&quot;font-size:10px&quot;&gt;OBSERVER&lt;/font&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ subscribe(observer)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ unsubscribe(observer)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ publish(order, text)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="875" y="1149" width="250" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="Observer" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;OrderObserver «interface»&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ onOrderChanged(order, text)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1112" y="1394" width="311" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="Repo" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;OrderRepository&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ load(): List&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ save(orders)&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;+ file(): Path&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1157" y="1149" width="177" height="131" as="geometry" />
+        </mxCell>
+        <mxCell id="Line" value="&lt;div style=&quot;padding:2px&quot;&gt;&lt;b&gt;CartLine «record»&lt;/b&gt;&lt;hr/&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;productId, name&lt;/div&gt;&lt;div style=&quot;text-align:left;white-space:nowrap;padding:2px 4px&quot;&gt;unitPrice, quantity, note&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CFC7E9;fontColor=#25203C;fontSize=12;fontFamily=Arial;align=center;verticalAlign=middle;arcSize=12;spacing=7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="119" y="1159" width="243" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="calls" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="UI" target="Facade">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="subscribes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="UI" target="Observer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="constructs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Facade" target="Factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Facade" target="Builder">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="publishes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Facade" target="Events">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="persists" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Facade" target="Repo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="Factory" target="Item">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Food" target="Factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Drink" target="Factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Dessert" target="Factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" value="builds" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Builder" target="Order">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Order" target="State">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" value="contains" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;" edge="1" parent="1" source="Order" target="Line">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="New" target="State">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Preparing" target="State">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Ready" target="State">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=block;endFill=0;" edge="1" parent="1" source="Final" target="State">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge18" value="notifies" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8F7BCC;fontColor=#5C5296;fontSize=11;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="Events" target="Observer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
