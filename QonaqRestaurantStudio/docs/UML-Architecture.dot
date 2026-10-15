@@ -1,0 +1,53 @@
+digraph RestaurantUML {
+  graph [label="QONAQ Restaurant Studio  |  Java 17  |  5 Design Patterns", labelloc=t, fontsize=26, fontname="DejaVu Sans", fontcolor="#24203c", ranksep=0.62, nodesep=0.3, splines=polyline, bgcolor="#f8f7fc", pad=0.4, compound=true];
+  node [shape=record, style="filled,rounded", color="#dcd8ee", fillcolor=white, fontname="DejaVu Sans", fontsize=12, fontcolor="#24203c", penwidth=1.5, margin="0.15,0.13"];
+  edge [fontname="DejaVu Sans", fontsize=10, color="#8b80c4", arrowsize=0.65, penwidth=1.4];
+  UI [label="{RestaurantFrame|+ navigate(page)\l+ flash(message)\l}", fillcolor="#EDE8FF"];
+  Facade [label="{RestaurantFacade  «Facade»|+ catalog() : List\l+ addToCart(id, qty)\l+ checkout(...) : Order\l+ advance(id)\l+ cancel(id)\l+ revenue() : int\l}", fillcolor="#D8CBFF", penwidth=2];
+  UI -> Facade [label="calls", color="#7357e6", penwidth=2];
+  subgraph cluster_factory {
+    label="① FACTORY METHOD";fontsize=17;fontcolor="#654bd3";style="rounded,filled";fillcolor="#f1edff";color="#e4dcff";
+    Factory [label="{«abstract» MenuFactory|# create(...) : MenuItem\l+ catalog() : List\l}"];
+    Food [label="{FoodFactory|+ catalog()\l}"];
+    Drink [label="{DrinkFactory|+ catalog()\l}"];
+    Dessert [label="{DessertFactory|+ catalog()\l}"];
+    Item [label="{MenuItem «record»|id, name, category\lprice, icon, artStyle\l}", fillcolor="#fcfaff"];
+    Food -> Factory [arrowhead=empty];Drink -> Factory [arrowhead=empty];Dessert -> Factory [arrowhead=empty];
+    Factory -> Item [label="creates",style=dashed];
+  }
+  subgraph cluster_builder {
+    label="② BUILDER";fontsize=17;fontcolor="#654bd3";style="rounded,filled";fillcolor="#f1edff";color="#e4dcff";
+    Builder [label="{OrderBuilder «Builder»|+ customer(value)\l+ phone(value)\l+ addItem(line)\l+ discount(value)\l+ build() : Order\l}"];
+    Order [label="{Order|id, customer, items\lsubtotal, discount, status\l+ next()\l+ cancel()\l}"];
+    Builder -> Order [label="builds",style=dashed];
+  }
+  subgraph cluster_state {
+    label="③ STATE";fontsize=17;fontcolor="#654bd3";style="rounded,filled";fillcolor="#f1edff";color="#e4dcff";
+    State [label="{«interface» OrderState|+ advance(order)\l+ cancel(order)\l}"];
+    New [label="{NewState|+ advance()\l+ cancel()\l}"];
+    Preparing [label="{PreparingState|+ advance()\l+ cancel()\l}"];
+    Ready [label="{ReadyState|+ advance()\l+ cancel()\l}"];
+    Final [label="{FinalState|+ advance()\l+ cancel()\l}"];
+    New -> State [arrowhead=empty];Preparing -> State [arrowhead=empty];Ready -> State [arrowhead=empty];Final -> State [arrowhead=empty];
+  }
+  subgraph cluster_observer {
+    label="④ OBSERVER";fontsize=17;fontcolor="#654bd3";style="rounded,filled";fillcolor="#f1edff";color="#e4dcff";
+    Events [label="{OrderEvents «Subject»|+ subscribe(observer)\l+ unsubscribe(observer)\l+ publish(order, text)\l}"];
+    Observer [label="{«interface» OrderObserver|+ onOrderChanged(order, text)\l}"];
+    Events -> Observer [label="notifies",style=dashed];
+  }
+  subgraph cluster_persistence {
+    label="⑤ PERSISTENCE + FACADE";fontsize=17;fontcolor="#654bd3";style="rounded,filled";fillcolor="#f1edff";color="#e4dcff";
+    Repo [label="{OrderRepository|+ load() : List\l+ save(orders)\l+ file() : Path\l}"];
+    Line [label="{CartLine «record»|productId, name\lunitPrice, quantity, note\l}", fillcolor="#fcfaff"];
+  }
+  Facade -> Factory [label="constructs"];
+  Facade -> Builder [label="uses"];
+  Facade -> Events [label="publishes"];
+  Facade -> Repo [label="persists"];
+  Order -> State [label="delegates"];
+  Order -> Line [label="contains"];
+  UI -> Observer [label="subscribes",style=dotted];
+  {rank=same; Factory; Builder;}
+  {rank=same; State; Events; Repo;}
+}
